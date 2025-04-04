@@ -4,6 +4,7 @@ import com.expense_tracker.entities.UserInfo;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
+@SuppressWarnings("deprecation")
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class) // // it will convert user_name to userName
 public class UserInfoDto extends UserInfo {
 
