@@ -20,7 +20,7 @@ import lombok.Data;
 @Component
 @AllArgsConstructor
 @Data
-public class UserDetailsSeriveImpl implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private final UserRepository userRepository;
