@@ -28,6 +28,7 @@ public class JwtService {
 		return claimResolver.apply(claims);
 	}	
 
+	@SuppressWarnings("deprecation")
 	private Claims extractAllClaims(String token) {
 		return Jwts.parser()
 				.setSigningKey(getSignKey())
@@ -54,6 +55,7 @@ public class JwtService {
 		return (username.equals(userDetails.getUsername()) && !isTokenExpired(token)) ;
 	}
 	
+	@SuppressWarnings({"deprecation"})
 	private String createToken(Map<String, Object> claims, String username) {
 		return Jwts.builder()
 				.setClaims(claims)

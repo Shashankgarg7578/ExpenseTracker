@@ -18,6 +18,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+@SuppressWarnings("deprecation")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +31,7 @@ public class RefreshToken {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private int id;
 
 	private String token;
 
