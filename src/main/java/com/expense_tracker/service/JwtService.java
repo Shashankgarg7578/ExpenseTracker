@@ -2,6 +2,7 @@ package com.expense_tracker.service;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -17,7 +18,7 @@ import io.jsonwebtoken.security.Keys;
 @Service
 public class JwtService {
 
-	public static final String SECRET = "2b7e151628aed2a6abf7158809cf4f3c";
+	public static final String SECRET = "oPliLVZRV2RFiGcjYWZ3L1hXy+WRIEZ3we3z1XZtQqw=";
 
 	public String extractUsername(String token) {
 		return extractClaim(token, Claims::getSubject);
@@ -53,6 +54,11 @@ public class JwtService {
 	public Boolean validateToken(String token, UserDetails userDetails) {
 		final String username = extractUsername(token);
 		return (username.equals(userDetails.getUsername()) && !isTokenExpired(token)) ;
+	}
+
+	public String GenerateToken(String username) {
+		Map<String, Object> claims = new HashMap<>();
+		return createToken(claims, username);
 	}
 	
 	@SuppressWarnings({"deprecation"})
